@@ -1,28 +1,17 @@
 package nativetext
 
 import scala.io.Source
+import scala.util.{CommandLineParser as CLP}
 
-object NativeTextProcessor extends App {
-	println("Hello from Native!")
+object NativeTextProcessor {
+  def main(args: Array[String]) = {
+    val files = args.toList.reduceLeft(_ + ", " + _)
+    println(s"Files: $files")
 
-	
-	if (true) {
-		val dataLocation = "dataset.txt"
-		val lines = Source.fromFile(dataLocation).getLines
-
-		var lineCount = 0
-		var line = ""
-
-		println("Start")
-		while (lines.hasNext) {
-			lines.next()
-			lineCount += 1
-		}
-		println("End. Lines: " + lineCount)
-	}
-	var sum = 0
-
-
-	println("Final sum is: " + sum)
-
+    val lines = args.flatMap(f => Source.fromFile(f).getLines)
+    val words = lines.flatMap(_.split(" "))
+    
+    val output = s"Total number of words: ${words.length}"
+    println(output)
+  }
 }
