@@ -1,7 +1,6 @@
 package nativetext
 
 import scala.io.Source
-import scala.util.{CommandLineParser as CLP}
 
 object NativeTextProcessor {
   def main(args: Array[String]) = {
