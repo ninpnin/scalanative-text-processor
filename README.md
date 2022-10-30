@@ -2,7 +2,7 @@
 
 Process some text files with Scala and create native binaries to try out Scala Native.
 
-Build and run _nativeargs_ that uses an external library
+Build and run _nativetext_ that uses an external library
 
 ```bash
 mill nativetext.nativeLink
