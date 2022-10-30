@@ -1,3 +1,5 @@
 out/
 dataset.txt
 log.txt
+project/
+.bsp/
